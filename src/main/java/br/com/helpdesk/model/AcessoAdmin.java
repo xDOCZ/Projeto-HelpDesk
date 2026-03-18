@@ -44,25 +44,36 @@ public class AcessoAdmin {
 
                     switch (opcAdmin) {
                     case 1: {
-                        System.out.println("CADASTRAR USUARIO:");
-                        System.out.print("Nome: ");
-                        String nome = sc.nextLine();
-                        System.out.print("Setor: ");
-                        String setor = sc.nextLine();
-                        System.out.print("Email: ");
-                        String email = sc.nextLine();
-                        System.out.print("Telefone: ");
-                        String telefone = sc.nextLine();
-                     
-                        CadastrarUser u = new CadastrarUser(nome, setor, email, telefone);
-                        u.Exibir();
-                        users.add(u);
-                        Main.limparTela();
+                    	int opc = 0;
+                    	do {
+                    		System.out.println("----------------------");
+                    		System.out.println("CADASTRAR USUARIO:");
+                            System.out.print("Nome: ");
+                            String nome = sc.nextLine();
+                            System.out.print("Setor: ");
+                            String setor = sc.nextLine();
+                            System.out.print("Email: ");
+                            String email = sc.nextLine();
+                            System.out.print("Telefone: ");
+                            String telefone = sc.nextLine();
+                            System.out.println("----------------------");
+                         
+                            CadastrarUser u = new CadastrarUser(nome, setor, email, telefone);
+                            opc = u.ExibirUser();
+                          
+                            if (opc == 1) {
+                                users.add(u);
+                            }
+                            
+                    	} while(opc != 1);
+                    	
+                    	Main.limparTela();
                         break;
                     }
                     case 2: {
                     	int opc;
 						do {
+							System.out.println("----------------------");
                             System.out.println("CADASTRAR TECNICO:");
                             System.out.print("Nome: ");
                             String nome = sc.nextLine();
@@ -70,6 +81,7 @@ public class AcessoAdmin {
                             String email = sc.nextLine();
                             System.out.print("Telefone: ");
                             String telefone = sc.nextLine();
+                            System.out.println("----------------------");
 
                             CadastrarTecnicos t = new CadastrarTecnicos(nome, email, telefone);
                             opc = t.ExibirTecnicos();
@@ -79,14 +91,20 @@ public class AcessoAdmin {
                             }
 
                         } while (opc != 1);
+						
+						Main.limparTela();
                         break;
                     }
                     case 0: {
+                    	System.out.println("----------------------");
                         System.out.println("RETORNANDO AO MENU...");
                         Main.retornarMenu();
+                        System.out.println("----------------------");
                     }
                     default:
+                    	System.out.println("----------------------");
                         System.out.println("OPÇÃO INVALIDA !!");
+                        System.out.println("----------------------");
                     }
 
                 } while (opcAdmin != 0);

@@ -18,11 +18,13 @@ public class CadastrarTecnicos {
     public int ExibirTecnicos() {
     	sc = new Scanner(System.in);
     	int resposta;
+    	System.out.println("----------------------");
         System.out.println("INFORMAÇÕES CORRETAS?");
         System.out.println("Email: " + emailTecnico);
         System.out.println("Telefone: " + telefoneTecnico);
         System.out.println("1. SIM");
         System.out.println("2. NAO");
+        System.out.println("----------------------");
         
         resposta = sc.nextInt();
         return resposta;
