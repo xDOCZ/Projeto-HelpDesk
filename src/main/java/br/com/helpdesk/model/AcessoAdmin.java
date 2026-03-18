@@ -8,6 +8,7 @@ public class AcessoAdmin {
     String correctAdminUserName = "naughtuser", correctAdminPassword = "40028922";
 
     ArrayList<CadastrarUser> users = new ArrayList<>();
+    ArrayList<CadastrarTecnicos> tecnicos = new ArrayList<>();
 
     public void loginAdmin(Scanner sc) {
         int tentativas = 3;
@@ -60,7 +61,24 @@ public class AcessoAdmin {
                         break;
                     }
                     case 2: {
-                        System.out.println("CADASTRAR TECNICO:");
+                    	int opc;
+						do {
+                            System.out.println("CADASTRAR TECNICO:");
+                            System.out.print("Nome: ");
+                            String nome = sc.nextLine();
+                            System.out.print("Email: ");
+                            String email = sc.nextLine();
+                            System.out.print("Telefone: ");
+                            String telefone = sc.nextLine();
+
+                            CadastrarTecnicos t = new CadastrarTecnicos(nome, email, telefone);
+                            opc = t.ExibirTecnicos();
+
+                            if (opc == 1) {
+                                tecnicos.add(t);
+                            }
+
+                        } while (opc != 1);
                         break;
                     }
                     case 0: {
