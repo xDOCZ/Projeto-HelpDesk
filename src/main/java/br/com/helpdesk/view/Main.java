@@ -23,7 +23,7 @@ public class Main {
     public static void menu() {
         int opc = 0;
         
-        System.out.println("teste do sandbox para commit");
+        System.out.println("teste do sandbox");
         
         do {
             System.out.println("----------------------");
