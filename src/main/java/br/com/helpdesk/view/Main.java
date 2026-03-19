@@ -16,13 +16,13 @@ public class Main {
 			System.out.println();
 		}
 	}
-	
+
 	public static void retornarMenu() {
 		menu();
 	}
 
 	public static void menu() {
-		int opc = 0;
+		int opcMenuInicial;
 
 		System.out.println("teste branch sandbox");
 
@@ -35,16 +35,20 @@ public class Main {
 			System.out.println("0. SAIR");
 			System.out.println("----------------------");
 			System.out.print("ESCOLHA:");
-			opc = sc.nextInt();
+			opcMenuInicial = sc.nextInt();
 
 			limparTela();
 
-			if (opc == 1) {
+			switch (opcMenuInicial) {
+			case 1:
 				acessoAdmin.loginAdmin(sc);
-			} else if (opc == 2) {
+				break;
+			case 2:
 				acessoUser.loginUser();
+				break;
 			}
-		} while (opc != 0);
+
+		} while (opcMenuInicial != 0);
 	}
 
 	public static void main(String[] args) {

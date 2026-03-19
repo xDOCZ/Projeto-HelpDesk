@@ -136,7 +136,7 @@ public class AcessoAdmin {
 						Main.limparTela();
 						break;
 					}
-					case 2:{
+					case 2: {
 						int opc = 0;
 						CadastrarTecnicos t = null;
 
